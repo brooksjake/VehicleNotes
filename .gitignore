@@ -1,0 +1,10 @@
+# C# / .NET
+**/bin/
+**/obj/
+.vs/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
