@@ -30,15 +30,35 @@ classDiagram
         -Date _birthdate
         -string _licenseNumber
         -List<Vehicle> _vehicles
+        -StatisticsPage _stats
         
         +Initializer(BaseDriverInfo)
         +DisplayStats()
         +AddVehicle(BaseVehicleInfo)
     }
     class Entry {
-        +Date _date
+        #Date _date
+        #string _description
+        -double _cost
+        #bool _doneAtHome
+        -string _type
+        #Initializer()
+        +UpdateMileage(double)
+        +GetType() string _type
+        +GetCost() double _cost
+        +GetDate() Date _date
     }
-
-
-
+    class GasRefill {
+        -double _gallons
+        +Initilizer()
+    }
+    class DamageReport {
+        +Initilizer()
+    }
+    class MaintenanceLog {
+        +Initilizer()
+    }
+    Entry <|-- GasRefill
+    Entry <|-- DamageReport
+    Entry <|-- MaintenanceLog
 ```

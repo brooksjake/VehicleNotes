@@ -44,3 +44,4 @@ sourcebank:
 - [fireship tutorial](https://www.youtube.com/watch?v=1xipg02Wu8s)
 - [flutter tutorial playlist](https://www.youtube.com/playlist?list=PLjxrf2q8roU2bqkohF-r9TNmo8HWSu0TG)
 - [flutter learn pathway](https://docs.flutter.dev/learn/pathway)
+- [full beginner course](https://www.youtube.com/watch?v=HQ_ytw58tC4)
