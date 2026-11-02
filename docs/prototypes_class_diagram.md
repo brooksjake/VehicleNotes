@@ -6,8 +6,13 @@ title: Vehicle Notes
 ---
 classDiagram
     class Program {
-        
+        StatisticsService _statsService
         createNewReminder()
+    }
+    Program *-- StatisticsService
+    class StatisticsService {
+        DisplayVehicleStats(Vehicle)
+        DisplayFullStats(Driver)
     }
     class Vehicle {
         Driver _owner
@@ -36,10 +41,7 @@ classDiagram
         Initializer(BaseDriverInfo)
         AddVehicle(BaseVehicleInfo)
     }
-    class StatisticsService {
-        DisplayVehicleStats(Vehicle)
-        DisplayFullStats(Driver)
-    }
+    Driver *-- Vehicle
     class VehicleEntry { <!-- baseclass -->
         int _entryID <!-- when might i need this? would i need to store these in a list outside of this class so as to be able to search/call them? -->
         Date _date
@@ -74,7 +76,7 @@ classDiagram
         int _quantity
         <!-- can this class maybe be contained in the workentry class?  NO, separate class is better -->
     }
-    WorkEntry *-- WorkPartMaterial
+    WorkEntry *-- WorkParkMaterial
     class IncidentEntry {
         string  _incidentDescription <!-- should this rewrite the base _description? NO -->
         string _location

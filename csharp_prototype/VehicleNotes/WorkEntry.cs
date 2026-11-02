@@ -1,4 +1,4 @@
-
+namespace csharp_prototype;
 
 public class WorkEntry : Entry
 {

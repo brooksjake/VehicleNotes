@@ -1,4 +1,4 @@
-
+namespace csharp_prototype;
 public class Driver
 {
     private string _firstname;
@@ -13,7 +13,14 @@ public class Driver
         _firstname = firstname; _lastname = lastname; _birthdate = bday; _licenseNumber = licenseNumber;
     }
     
-    public void AddVehicle()
+    public void CreateNewVehicle()
+    {
+        Vehicle newV = Vehicle.ConsoleCreate(this);
+        vehicles.Add(newV);
+        newV.StartAdministration();
+    }
+    
+    public void TransferOwnerShip(Vehicle v)
     {
         
     }
