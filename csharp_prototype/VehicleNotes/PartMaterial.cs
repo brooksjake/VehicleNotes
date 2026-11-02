@@ -1,8 +1,8 @@
-namespace csharp_prototype;
+// namespace csharp_prototype;
 
-public class PartMaterial
-{
-    private string _name;
-    private decimal _cost;
-    private int _quantity;
-}
+// public class PartMaterial
+// {
+//     private string _name;
+//     private decimal _cost;
+//     private int _quantity;
+// }

@@ -1,6 +1,6 @@
-namespace csharp_prototype;
+// namespace csharp_prototype;
 
-public class FuelEntry : Entry
-{
-    private decimal _gallons;
-}
+// public class FuelEntry : Entry
+// {
+//     private decimal _gallons;
+// }

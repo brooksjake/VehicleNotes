@@ -1,17 +1,17 @@
-namespace csharp_prototype;
+// namespace csharp_prototype;
 
-public class StatisticsService
-{
-    // this one's gonna be a pain in the butt
+// public class StatisticsService
+// {
+//     // this one's gonna be a pain in the butt
     
     
-    public void DisplayVehicleStats(Vehicle v)
-    {
+//     public void DisplayVehicleStats(Vehicle v)
+//     {
         
-    }
+//     }
     
-    public void DisplayDriverStats(Driver d)
-    {
+//     public void DisplayDriverStats(Driver d)
+//     {
         
-    }
-}
+//     }
+// }

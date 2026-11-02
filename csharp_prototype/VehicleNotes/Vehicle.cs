@@ -1,3 +1,4 @@
+
 namespace csharp_prototype;
 
 public class Vehicle
@@ -17,34 +18,23 @@ public class Vehicle
     public string insurancePolicyNumber;
     private List<Entry> entries;
     
-    private Vehicle(Driver owner, int year, string make, string model, string vin)
+    public Vehicle(Driver owner, int year, string make, string model, string vin)
     {
         _owner = owner; _year = year; _make = make; _model = model; _vin = vin;
-        currentOdometerReading = 0;
+        currentOdometerReading = 0; entries = new List<Entry>();
+        _owner.AddVehicle(this);
     }
     
-    public static Vehicle ConsoleCreate(Driver d)
+    // internal static void TransferOwnership(Driver prevOwner, Vehicle vehicle, Driver newOwner)
+    // {
+    //     prevOwner.RemoveVehicle(vehicle);
+    //     newOwner.AddVehicle(vehicle);
+    //     vehicle._owner = newOwner;
+    // }
+    public void CompleteVehicleSetup (string plate, string state, string policynum, DateOnly registrationend)
     {
-        Console.WriteLine("---input the new vehicle information---");
-        Console.Write("year:  "); int y = int.Parse(Console.ReadLine());
-        Console.Write("make:  "); string ma = Console.ReadLine();
-        Console.Write("model:  "); string mo = Console.ReadLine();
-        Console.Write("vin:  "); string vin = Console.ReadLine();
-        Vehicle v = new Vehicle(d, y, ma, mo, vin);
-        v.StartAdministration();
-        return v;
-    }
-    
-    public void StartAdministration()
-    {
-        Console.WriteLine("---input the new vehicle's administrative information---");
-        Console.Write("license plate:  "); licensePlateNumber = Console.ReadLine();
-        Console.Write("registered state abbreviation:  "); registeredState = Console.ReadLine();
-        Console.Write("insurace policy number:  "); insurancePolicyNumber = Console.ReadLine();
-        Console.Write("registration end date (yyyy-dd-mm):  ");
-        string[] fulldate = Console.ReadLine().Split("-");
-        registrationEndDate = new DateOnly(int.Parse(fulldate[0]), int.Parse(fulldate[1]), int.Parse(fulldate[2]));
-        
+        licensePlateNumber = plate; registeredState = state; insurancePolicyNumber = policynum;
+        registrationEndDate = registrationend;
         // create and add a 1st new entry, for odometer start???
     }
     
@@ -54,7 +44,10 @@ public class Vehicle
         // include odometerreading update???
     }
     
+    public void UpdateOdomenter(int oreading)
+    {
+        if (oreading > currentOdometerReading) currentOdometerReading = oreading;
+    }
+    
     //public bool RegistrationValid()
-    
-    
 }
