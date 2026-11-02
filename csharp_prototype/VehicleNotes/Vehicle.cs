@@ -30,7 +30,9 @@ public class Vehicle
         Console.Write("make:  "); string ma = Console.ReadLine();
         Console.Write("model:  "); string mo = Console.ReadLine();
         Console.Write("vin:  "); string vin = Console.ReadLine();
-        return new Vehicle(d, y, ma, mo, vin);
+        Vehicle v = new Vehicle(d, y, ma, mo, vin);
+        v.StartAdministration();
+        return v;
     }
     
     public void StartAdministration()
@@ -39,7 +41,11 @@ public class Vehicle
         Console.Write("license plate:  "); licensePlateNumber = Console.ReadLine();
         Console.Write("registered state abbreviation:  "); registeredState = Console.ReadLine();
         Console.Write("insurace policy number:  "); insurancePolicyNumber = Console.ReadLine();
+        Console.Write("registration end date (yyyy-dd-mm):  ");
+        string[] fulldate = Console.ReadLine().Split("-");
+        registrationEndDate = new DateOnly(int.Parse(fulldate[0]), int.Parse(fulldate[1]), int.Parse(fulldate[2]));
         
+        // create and add a 1st new entry, for odometer start???
     }
     
     public void AddEntry(Entry newEntry)

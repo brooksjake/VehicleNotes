@@ -15,11 +15,8 @@ public class Driver
     
     public void CreateNewVehicle()
     {
-        Vehicle newV = Vehicle.ConsoleCreate(this);
-        vehicles.Add(newV);
-        newV.StartAdministration();
+        vehicles.Add(Vehicle.ConsoleCreate(this));
     }
-    
     public void TransferOwnerShip(Vehicle v)
     {
         
